@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChevpFooter Web Component - Usage Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #242424;
+            color: rgba(255, 255, 255, 0.87);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #58a6ff;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px 0;
+            color: rgba(255, 255, 255, 0.87);
+        }
+
+        pre {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #58a6ff;
+        }
+
+        .demo-box {
+            min-height: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .demo-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(88, 166, 255, 0.2);
+            color: #58a6ff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        button {
+            background: #58a6ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #75b5ff;
+        }
+
+        .controls {
+            margin: 20px 0;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background: #f6f6f6;
+                color: #213547;
+            }
+
+            .section {
+                background: rgba(0, 0, 0, 0.02);
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+
+            pre {
+                background: #ffffff;
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .demo-box {
+                background: rgba(255, 255, 255, 0.5);
+                border-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChevpFooter Web Component</h1>
+        <p class="subtitle">A reusable footer component with customizable branding</p>
+
+        <!-- Basic Usage -->
+        <section class="section">
+            <h2>Basic Usage</h2>
+            <p>Include the script from CDN and use the component:</p>
+            <pre><code>&lt;!-- Include the web component --&gt;
+&lt;script type="module" src="https://chevp.github.io/chevp-footer/chevp-footer.js"&gt;&lt;/script&gt;
+
+&lt;!-- Use the component --&gt;
+&lt;chevp-footer&gt;&lt;/chevp-footer&gt;</code></pre>
+
+            <h3>Live Demo - Basic</h3>
+            <div class="demo-box">
+                <div class="demo-label">Basic Usage</div>
+                <p>The footer will appear in the bottom-left corner with default settings.</p>
+            </div>
+        </section>
+
+        <!-- Custom Avatar and Username -->
+        <section class="section">
+            <h2>Custom Avatar and Username</h2>
+            <p>Customize the avatar and username:</p>
+            <pre><code>&lt;chevp-footer
+    avatar="https://avatars.githubusercontent.com/u/78725490?s=48&amp;v=4"
+    username="YourGitHubUsername"&gt;
+&lt;/chevp-footer&gt;</code></pre>
+        </section>
+
+        <!-- Attributes Reference -->
+        <section class="section">
+            <h2>Attributes Reference</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.2);">
+                        <th style="text-align: left; padding: 12px;">Attribute</th>
+                        <th style="text-align: left; padding: 12px;">Type</th>
+                        <th style="text-align: left; padding: 12px;">Default</th>
+                        <th style="text-align: left; padding: 12px;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                        <td style="padding: 12px;"><code>avatar</code></td>
+                        <td style="padding: 12px;">String (URL)</td>
+                        <td style="padding: 12px;">chevp's avatar</td>
+                        <td style="padding: 12px;">URL to the avatar image</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;"><code>username</code></td>
+                        <td style="padding: 12px;">String</td>
+                        <td style="padding: 12px;">"chevp"</td>
+                        <td style="padding: 12px;">GitHub username to display and link to</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Features -->
+        <section class="section">
+            <h2>Features</h2>
+            <ul style="line-height: 2;">
+                <li>Self-contained web component with Shadow DOM encapsulation</li>
+                <li>No external dependencies required</li>
+                <li>Responsive design with light/dark mode support</li>
+                <li>Customizable avatar and username</li>
+                <li>Links to GitHub profile</li>
+                <li>Fixed positioning in bottom-left corner</li>
+                <li>Smooth transitions and hover effects</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Include the ChevpFooter web component from CDN -->
+    <script type="module" src="https://chevp.github.io/chevp-footer/chevp-footer.js"></script>
+
+    <!-- Add the component to the page -->
+    <chevp-footer></chevp-footer>
+</body>
+</html>
